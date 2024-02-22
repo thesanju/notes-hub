@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .home-button {
@@ -12,10 +12,10 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid #3498db;
+    border: 2px solid #393E46;
     border-radius: 5px;
-    color: #3498db;
-    background-color: #ffffff;
+    color: #1B1A55;
+    background-color: #D7E4C0;
     transition: background-color 0.3s, color 0.3s;
     margin: 5px;
 }
@@ -25,10 +25,20 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
-    top: 50%;
 }
 
-.home-button:hover {
-    background-color: #3498db;
-    color: #ffffff;
+@media (max-width: 768px) {
+    .container {
+        margin-top: 10%;
+    }
+
+    .home-button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-button {
+        font-size: 16px;
+    }
 }
