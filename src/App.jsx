@@ -1,7 +1,6 @@
 import './App.css';
 import Pdfview from './components/Pdfview';
 import Selectsem from './components/Selectsem';
-import Sem1 from './components/Sem1';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sem5 from './components/Sem5';
 import Soon from './components/Soon';
