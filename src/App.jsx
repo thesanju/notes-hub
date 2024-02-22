@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Selectsem />}/>
-        <Route path='/view' element={<Pdfview />}/>
-        <Route path="semester/1" element={<Sem1 />}/>
+        <Route path='/view/:PdfUrl' element={<Pdfview />}/>
+        <Route path="semester-1" element={<Sem1 />}/>
       </Routes>
     </BrowserRouter>
   );

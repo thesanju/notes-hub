@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import { useState } from 'react';
-import './card.css'; // Import the CSS file
+import './style/card.css'; // Import the CSS file
 import Pdfview from './Pdfview';
 import { Link, Route } from 'react-router-dom';
 

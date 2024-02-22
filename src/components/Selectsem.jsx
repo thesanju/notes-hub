@@ -1,6 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-import './selectsem.css'
+import './style/selectsem.css'
 
 function Selectsem() {
   return (
@@ -8,7 +8,7 @@ function Selectsem() {
       <div className='button-pair'>
       </div>
       <div className='button-pair'>
-        <Link to="/semester/1" className='home-button'>sem1</Link>
+        <Link to="/semester-1" className='home-button'>sem1</Link>
         <Link to="/semester/2" className='home-button'>sem2</Link>
       </div>
       <div className='button-pair'>
