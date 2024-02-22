@@ -2,7 +2,6 @@
 import { useParams } from 'react-router-dom';
 import Chat from './Chat';
 
-// eslint-disable-next-line react/prop-types
 function Pdfview() {
   const { PdfUrl } = useParams();
 
@@ -17,14 +16,14 @@ function Pdfview() {
         <iframe
           title="PDF Preview"
           src={decodeURIComponent(PdfUrl)}
-          width="800"
-          height="900"
+          width="100%" 
+          height="850px"
           style={{ border: '1px solid #ccc', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}
           allow="autoplay"
         ></iframe>
       </div>
 
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, marginTop: '20px' }}>
         <Chat></Chat>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'; 
 import './style/chat.css'; 
-import 'dotenv'
+import 'dotenv';
 
 function Chat() {
   const [messages, setMessages] = useState([]);
@@ -41,15 +43,36 @@ function Chat() {
     }
   };
 
+  const renderMessage = (message, index) => {
+    if (message.type === 'user') {
+      return <div key={index} className={`message ${message.type}`}>{message.text}</div>;
+    } else if (message.type === 'bot') {
+      return (
+        <div key={index} className={`message ${message.type}`}>
+          {message.text.includes('```') ? (
+            <SyntaxHighlighter language="javascript" style={docco}>
+              {message.text.replace(/```([\s\S]+?)```/g, (_, content) => content)}
+            </SyntaxHighlighter>
+          ) : (
+            message.text.includes('**') ? (
+              <strong>{message.text.replace(/\*\*(.*?)\*\*/g, (_, content) => content)}</strong>
+            ) : (
+              <span>{message.text}</span>
+            ))}
+        </div>
+      );
+    }
+  
+    return null;
+  };
+  
+  
+
   return (
     <div className="centered-card">
       <div className="chat-container">
         <div className="chat-box">
-          {messages.map((message, index) => (
-            <div key={index} className={`message ${message.type}`}>
-              {message.text}
-            </div>
-          ))}
+          {messages.map((message, index) => renderMessage(message, index))}
         </div>
         <div className="user-input">
           <input
